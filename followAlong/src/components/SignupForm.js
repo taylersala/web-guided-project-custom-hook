@@ -23,8 +23,9 @@ const useStyles = makeStyles(theme => ({
 
 export default function SignupForm() {
   const classes = useStyles();
-  const [firstName, setFirstName] = useState("");
+  const [formValues, setFormValues] = useState({username: '', email: ''});
 
+  
   const handleChanges = e => {
     setFirstName(e.target.value);
   };
@@ -46,10 +47,10 @@ export default function SignupForm() {
           <legend>Add New Client</legend>
           <TextField
             id="outlined-name"
-            label="First Name"
+            label="User Name"
             className={classes.textField}
-            name="firstName"
-            value={firstName}
+            name="usename"
+            value={formValues.username}
             onChange={handleChanges}
             margin="normal"
             variant="outlined"
